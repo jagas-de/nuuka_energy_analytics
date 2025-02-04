@@ -3,7 +3,7 @@ import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from ingest_energy_consumption import fetch_and_insert_energy_data
-from merge_energy_consumption import fetch_and_merge_energy_data
+from incremental_energy_consumption import fetch_and_merge_energy_data
 from utils import *
 
 
