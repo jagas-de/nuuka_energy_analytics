@@ -20,10 +20,21 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
  ```
 
 ### run the ingestion
-``` ingest_energy.py
+```  ingest_energy.py
 ```
 ### run incremntal to ingest data to the raw table
 
-``` merge_energy_consumption.py
+```  merge_energy_consumption.py
+```
+
+### create branch
+``` git checkout -b feature/incremental_merge 
+```
+### Enhance/add new scripts, check the modifed/inserted files list
+``` git status
+```
+### add files and commeit
+``` git add .
+    git commit -m "Added the incremental load scripts"
 ```
 
