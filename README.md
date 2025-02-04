@@ -43,10 +43,10 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
 ### create branch
 ``` git checkout -b feature/incremental_merge ```
 ### Enhance/add new scripts, check the modifed/inserted files list
-``` git status```
-### add files and commeit
+``` git status ```
+### add files, commit and push
 ``` git add .
-    git commit -m "Added the incremental load scripts"```
-###
-``` git push  ```
+    git commit -m "Added the incremental load scripts" 
+    git push```
+
 
