@@ -15,9 +15,7 @@
 ### run the python script to retrive data from propertieslist and respective consume data using APIs
 
 ``` LIST_URL= https://helsinki-openapi.nuuka.cloud/api/v1.0/Property/List
-ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily/ListByProperty
-
- ```
+ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily/ListByProperty ```
 
 ### run the ingestion
 ```  ingest_energy.py
@@ -43,16 +41,12 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
 ```
 
 ### create branch
-``` git checkout -b feature/incremental_merge 
-```
+``` git checkout -b feature/incremental_merge ```
 ### Enhance/add new scripts, check the modifed/inserted files list
-``` git status
-```
+``` git status```
 ### add files and commeit
 ``` git add .
-    git commit -m "Added the incremental load scripts"
-```
+    git commit -m "Added the incremental load scripts"```
 ###
-``` git push
-```
+``` git push  ```
 
