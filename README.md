@@ -15,9 +15,7 @@
 ### run the python script to retrive data from propertieslist and respective consume data using APIs
 
 ``` LIST_URL= https://helsinki-openapi.nuuka.cloud/api/v1.0/Property/List
-ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily/ListByProperty
-
- ```
+ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily/ListByProperty ```
 
 ### run the ingestion
 ```  ingest_energy.py
@@ -26,15 +24,29 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
 
 ```  merge_energy_consumption.py
 ```
+### create parquet file with snapshot data to find latest
+
+``` energy_consume_snapshot.py
+
+
++--------------------+--------------+----------------+--------------------+
+|            location|reportinggroup|latest_7_day_avg|       snapshot_date|
++--------------------+--------------+----------------+--------------------+
+|4328 HYKS Psykiat...|   Electricity|      15516.3167|2025-02-04 21:31:...|
+|4329 KivelΣn vanh...|   Electricity|      15516.3167|2025-02-04 21:31:...|
+|      2247 Tukkutori|   Electricity|       14702.464|2025-02-04 21:31:...|
+|4192 Laakson sair...|   Electricity|      12334.1081|2025-02-04 21:31:...|
+|4370 Malmin pΣivy...|   Electricity|      12059.3806|2025-02-04 21:31:...|
++--------------------+--------------+----------------+--------------------+
+```
 
 ### create branch
-``` git checkout -b feature/incremental_merge 
-```
+``` git checkout -b feature/incremental_merge ```
 ### Enhance/add new scripts, check the modifed/inserted files list
-``` git status
-```
-### add files and commeit
+``` git status ```
+### add files, commit and push
 ``` git add .
-    git commit -m "Added the incremental load scripts"
-```
+    git commit -m "Added the incremental load scripts" 
+    git push```
+
 
