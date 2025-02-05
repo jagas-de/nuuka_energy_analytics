@@ -8,13 +8,14 @@
 ``` docker pull postgres:latest```
 
 ### create container with postgres database
-```docker run --name analytics_db -e POSTGRES_PASSWORD=password -d -p 15432:5432 postgres```
+``` docker run --name analytics_db -e POSTGRES_PASSWORD=password -d -p 15432:5432 postgres```
 
 ### Make sure validate the database connection in db client
 
 ### run the python script to retrive data from propertieslist and respective consume data using APIs
 
-``` LIST_URL= https://helsinki-openapi.nuuka.cloud/api/v1.0/Property/List
+``` 
+LIST_URL= https://helsinki-openapi.nuuka.cloud/api/v1.0/Property/List
 ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily/ListByProperty
 ```
 
@@ -22,16 +23,19 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
 ```create_schema.sql ```
 
 ### This will trigger a full ingestion load starting from 2025-01-01, or perform an incremental load with a merge based on the last run. If it’s the initial run, it will trigger a full load; otherwise, it will perform an incremental load 
-```nuuka_main.py
+```
+nuuka_main.py
 ```
 ### run incremntal to ingest data to the raw table
 
-```erge_energy_consumption.py
+```
+erge_energy_consumption.py
 ```
 ### Identify the top 5 locations with the highest average for the last week and store the snapshot as a Parquet file incrmentally.
 ### spark submit in local
 
-``` spark-submit --jars postgresql-42.7.4.jar C:\Users\jagad\nuuka_analytics\nuuka_energy_analytics\scripts\energy_consume_snapshot.py
+``` 
+spark-submit --jars postgresql-42.7.4.jar C:\Users\jagad\nuuka_analytics\nuuka_energy_analytics\scripts\energy_consume_snapshot.py
 
 
 +--------------------+--------------+----------------+--------------------+
@@ -52,6 +56,6 @@ ENERGY_DATA_URL = https://helsinki-openapi.nuuka.cloud/api/v1.0/EnergyData/Daily
 ### add files, commit and push
 ``` git add .
     git commit -m "Added the incremental load scripts" 
-    git push```
+    git push ```
 
 
