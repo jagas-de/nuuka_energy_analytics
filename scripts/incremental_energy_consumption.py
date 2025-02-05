@@ -10,8 +10,9 @@ def fetch_and_merge_energy_data(data,start_time,end_time):
         cursor = conn.cursor()
     # Prepare data as a list of tuples
         if input_data is None :
-            print("The data is not available for location {data}")
+            print(f"The data is not available for location {data}")
             return None
+        print(f"Merging energy data of lcoation {data} to table")
         merge_data = [(record["reportingGroup"], 
                        record["timestamp"],record["value"],record["unit"],
                        record["locationName"])  for record in input_data]
@@ -37,7 +38,7 @@ def fetch_and_merge_energy_data(data,start_time,end_time):
         print(f"fetch energy data of lcoation {data}")
 
     except Exception as e:
-        #conn.rollback()
+        conn.rollback()
         print(f"Error during merge: {e}")
 
     finally:

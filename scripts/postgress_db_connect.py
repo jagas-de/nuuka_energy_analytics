@@ -8,13 +8,6 @@ DB_CONFIG = {
     "driver" : "org.postgresql.Driver"
 }
 
-# PostgreSQL connection properties
-postgres_url = "jdbc:postgresql://localhost:5432/postgres"
-# postgres_properties = {
-#     "user": "postgres",
-#     "password": "analytics@123",
-#     "driver": "org.postgresql.Driver"
-# }
 
 
 def get_db_connection():

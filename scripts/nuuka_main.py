@@ -9,16 +9,15 @@ from utils import *
 
 
 if __name__=="__main__" :
-    print("hello")
+    
     last_run_date =get_last_successful_run_date()
+    run_status ='SUCCESS'
     if last_run_date :
-      
       start_time=last_run_date
-      start_time = datetime.datetime.strptime('2025-02-02','%Y-%m-%d').date()
+      #start_time = datetime.datetime.strptime('2025-02-02','%Y-%m-%d').date()
       end_time  = datetime.date.today()
-      print(start_time)
+      
     else: 
-      print("else loop")
       start_time = datetime.datetime.strptime('2025-01-01','%Y-%m-%d').date()
       end_time = datetime.date.today()
    
@@ -36,13 +35,17 @@ if __name__=="__main__" :
              
 
         # Collect results as they complete
-        for future in as_completed(future_to_property):
+        try :
+          for future in as_completed(future_to_property):
             prop = future_to_property[future]
             try:
                 result = future.result()
             except Exception as e:
-                print(f"Error processing {prop['propertyName']}: {e}") 
-                insert_audit_log('FAILED') 
-    
-    insert_audit_log('SUCCESS')
+                print(f"Error processing {prop['propertyName']}: {e}")
+                
+        except Exception as e:
+            insert_audit_log('FAILED') 
+        else :
+            #insert audt log
+            insert_audit_log('SUCCESS')
 
