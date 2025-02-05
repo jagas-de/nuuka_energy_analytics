@@ -13,9 +13,8 @@ if __name__=="__main__" :
     last_run_date =get_last_successful_run_date()
     run_status ='SUCCESS'
     if last_run_date :
-      
       start_time=last_run_date
-      start_time = datetime.datetime.strptime('2025-02-02','%Y-%m-%d').date()
+      #start_time = datetime.datetime.strptime('2025-02-02','%Y-%m-%d').date()
       end_time  = datetime.date.today()
       
     else: 
@@ -47,5 +46,6 @@ if __name__=="__main__" :
         except Exception as e:
             insert_audit_log('FAILED') 
         else :
+            #insert audt log
             insert_audit_log('SUCCESS')
 
